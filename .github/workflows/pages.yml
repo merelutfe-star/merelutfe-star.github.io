@@ -50,3 +50,5 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: doctor-haytham-pages
+
+# Trigger deployment after source-site content update
