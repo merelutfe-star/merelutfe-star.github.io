@@ -51,4 +51,4 @@ jobs:
         with:
           artifact_name: doctor-haytham-pages
 
-# Trigger deployment after source-site content update
+# Sync latest source-site content without changing the existing landing page
