@@ -1,0 +1,49 @@
+name: Deploy Doctor Haytham site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Pages repository
+        uses: actions/checkout@v6
+
+      - name: Prepare site from production repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf site
+          git clone --depth 1 https://github.com/merelutfe-star/doctor-haytham-pharmacies.git site
+          rm -rf site/.git
+          grep -rl --exclude-dir=.git "https://doctor-haytham-pharmacies.vercel.app" site | xargs -r sed -i 's#https://doctor-haytham-pharmacies.vercel.app#https://merelutfe-star.github.io#g'
+          touch site/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
