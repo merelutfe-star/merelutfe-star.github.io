@@ -1,0 +1,23 @@
+/* Unified site UI: full, uncropped responsive imagery + consistent navigation */
+.site-nav{border-top:1px solid #eef2f7;border-bottom:1px solid #e5eaf1;background:#fff;overflow-x:auto}
+.site-nav-inner{width:min(1100px,94%);margin:auto;display:flex;gap:6px;align-items:center;white-space:nowrap;padding:7px 0}
+.site-nav a{color:#163b72;text-decoration:none;font-weight:700;padding:7px 10px;border-radius:9px}
+.site-nav a:hover{background:#eef5ff}
+/* Keep the original 1536×1024 artwork ratio. Never crop the supplied banners. */
+.banner,.waimg,.wa-banner,.hero-banner,.whatsapp-banner{display:block;width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important}
+.banner{max-width:760px!important;margin-left:auto;margin-right:auto;border-radius:18px}
+.waimg,.wa-banner,.whatsapp-banner{max-width:620px!important;margin:22px auto;border-radius:16px}
+img[width][height]{max-width:100%;height:auto}
+.brand-logo,.logo{object-fit:contain!important}
+@media(max-width:700px){
+ .site-nav-inner{justify-content:flex-start;padding:6px 0}
+ .site-nav a{font-size:.9rem;padding:6px 8px}
+ .banner,.hero-banner{max-width:100%!important}
+ .waimg,.wa-banner,.whatsapp-banner{max-width:100%!important}
+}
+.site-footer{margin-top:40px;background:#07101f;color:#e7eef8;padding:38px 0 18px;border-top:1px solid #1b2a40}.site-footer-inner{width:min(1100px,94%);margin:auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:24px}.site-footer h2{font-size:1.05rem;margin:0 0 14px;color:#fff}.site-footer p{line-height:1.9;color:#b8c5d6;margin:0 0 14px}.site-footer a{display:block;color:#bcd0e8;text-decoration:none;margin:8px 0;line-height:1.6}.site-footer a:hover{color:#27d3a2}.footer-actions{display:flex;flex-wrap:wrap;gap:8px}.footer-actions a{display:inline-flex;align-items:center;gap:7px;background:#087f4f!important;border:1px solid #10a96b!important;color:#fff!important;border-radius:9px;padding:7px 12px;margin:0;font-weight:800}.site-footer-bottom{width:min(1100px,94%);margin:28px auto 0;padding-top:16px;border-top:1px solid #1b2a40;display:flex;justify-content:space-between;gap:16px;align-items:center;color:#8fa4bd;font-size:.9rem}.site-footer-bottom a{margin:0;color:#27d3a2}@media(max-width:800px){.site-footer-inner{grid-template-columns:1fr}.site-footer-bottom{flex-direction:column;align-items:flex-start}}
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:9999;display:inline-flex;align-items:center;gap:9px;background:#16a765;color:#fff!important;text-decoration:none!important;border-radius:999px;padding:12px 17px;box-shadow:0 8px 24px rgba(0,0,0,.22);font-weight:800;border:2px solid #fff}.wa-float svg{width:23px;height:23px;fill:currentColor;flex:none}.wa-float:hover{background:#128c5a;transform:translateY(-1px)}@media(max-width:700px){.wa-float{right:14px;bottom:14px;padding:11px 14px}.wa-float span{display:none}.wa-float svg{width:25px;height:25px}}
+/* Sitewide topic navigation: clean vertical links with generous spacing */
+.site-topic-nav{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:20px 22px;margin:20px 0 28px;box-shadow:0 6px 20px rgba(15,35,65,.04)}
+.site-topic-nav-title{display:flex;align-items:center;gap:10px;color:#102a56;font-size:1.05rem;font-weight:900;margin-bottom:14px}.site-topic-nav-title::before{content:"";width:4px;height:24px;border-radius:999px;background:#163b72;flex:none}
+.site-topic-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}.site-topic-list li{margin:0;padding:0}.site-topic-list a{display:flex;align-items:center;gap:12px;min-height:46px;padding:8px 12px;border:1px solid #edf1f6;border-radius:12px;background:#fbfcfe;color:#163b72;text-decoration:none;font-weight:750;line-height:1.6;transition:background .15s ease,border-color .15s ease,transform .15s ease}.site-topic-list a::before{content:attr(data-no);display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;background:#eef5ff;color:#163b72;font-size:.82rem;font-weight:900;flex:none}.site-topic-list a:hover{background:#f2f7ff;border-color:#cddcf0;transform:translateY(-1px)}.faq-toc{margin-top:20px}@media(max-width:700px){.site-topic-nav{padding:16px;margin:16px 0 22px}.site-topic-list{gap:7px}.site-topic-list a{min-height:44px;padding:8px 10px;font-size:.96rem}}

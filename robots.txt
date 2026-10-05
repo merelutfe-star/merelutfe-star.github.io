@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://merelutfe-star.github.io/sitemap.xml
+Sitemap: https://merelutfe-star.github.io/image-sitemap.xml
